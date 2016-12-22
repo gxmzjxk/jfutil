@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title> 多个例子</title>
+</head>
+<body>
+<span>1</span>
+<span>2</span>
+<span>3</span>
+<div id="box-container">666666</div>
+<span>4</span>
+<span>5</span>
+<script src="../lib/jfutil.js"></script>
+<script>
+    JFUtil.ready(function () {
+        // Date
+        console.log("Dom loaded");
+        var now = new Date().format('yyyy-MM-dd hh:mm:ss');
+        console.log(now);
+        // realArray
+        var arr1 = JFUtil.realArray(document.querySelectorAll('span'));
+        console.log(arr1);
+
+        // 复制数组，（浅拷贝）非引用拷贝
+        var arr2 = [1, 2, -3, 4, -11];
+        var copy2 = arr2.copy();
+        console.log(copy2);
+        copy2 = null;//如果是传入函数的话，有坑
+        console.log(arr2);
+
+        //数据库请求的数据 通常是json，或者数组，怎么判断为空呢
+        var obj = {};
+        console.log(JFUtil.isEmpty(obj));
+
+        // 获取 元素的 盒子模型
+        var box = JFUtil.getRectBoxObj(document.querySelector('#box-container'));
+        console.log(box);
+
+        //判断一个变量 能否转成 数值
+        var nnn1 = '158';
+        var nnn2 = '158c';
+        var nnn3 = 123;
+        console.log(likeNumber(nnn1));
+        console.log(likeNumber(nnn2));
+        console.log(likeNumber(nnn3));
+    });
+
+</script>
+</body>
+</html>

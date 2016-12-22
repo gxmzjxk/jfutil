@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 数组排序 </title>
+</head>
+<body>
+<script src="../lib/jfutil.min.js"></script>
+<script >
+    var testData = [
+        {name: 'Edward', value: 21, grade: 1, time: 10},
+        {name: 'Sharpe', value: 37, grade: 2, time: 2},
+        {name: 'And', value: 45, grade: 3, time: 3},
+        {name: 'The', value: -12, grade: 2, time: 4},
+        {name: 'Magnetic', value: 0, grade: 1, time: 5},
+        {name: 'Zeros', value: 37, grade: 2, time: 1},
+        {name: 'Google', value: 37, grade: 3, time: 100}
+    ];
+
+    var tmp7 = JFUtil.multiSort({
+        data: testData,
+        keys: [
+            {
+                'key': 'value',
+                'reverse': false
+            },
+            {
+                'key': 'grade',
+                'reverse': true
+            },
+            {
+                'key': 'time',
+                'reverse': false
+            },
+            {
+                'key': 'name',
+                'reverse': false
+            }
+        ],
+        reverse: true
+    });
+    console.log(testData);
+    console.log(tmp7);
+</script>
+</body>
+</html>

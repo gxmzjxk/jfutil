@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑到底部（可以自己实现distanceY）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box-container {
+            position: absolute;
+            width: 100%;
+            height: 150%;
+            background: silver;
+        }
+    </style>
+</head>
+<body>
+<div class="box-container">
+
+</div>
+<script src="../lib/jfutil.js"></script>
+<script>
+    var dom = document.querySelector('.box-container');
+    var tmpY = 0, distanceY = 0;
+    JFUtil.addHandler(dom, 'touchstart', function (e) {
+        tmpY = e.changedTouches[0].clientY;
+    });
+    JFUtil.addHandler(dom, 'touchend', function (e) {
+        distanceY = e.changedTouches[0].clientY - tmpY;
+        JFUtil.reachBottom(distanceY, function () {
+            alert("到底了~~~");
+        })
+    });
+
+</script>
+</body>
+</html>
