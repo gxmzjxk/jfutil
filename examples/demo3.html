@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container"></div>
+<script src="../lib/jfutil.js"></script>
+<script>
+    var dataObj = {
+        name: 'A',
+        children: [{
+            name: 'BB',
+            children: [{
+                name: 'ccc',
+                children: [{
+                    name: 'ffff',
+                    children: []
+                }
+                ]
+            },
+                {
+                    name: 'ddd',
+                    children: [{
+                        name : 'ggggg',
+                        children : []
+                    }]
+                }
+            ]
+        },
+            {
+                name: 'CC',
+                children: [{
+                    name: 'eee',
+                    children: []
+                }
+                ]
+            },
+        ]
+    };
+    var html = JFUtil.XListModel().buildView(dataObj);
+    console.log(html);
+    document.querySelector('.container').innerHTML = html;
+</script>
+</body>
+</html>

@@ -84,3 +84,38 @@
         console.log(likeNumber(nnn1));//true
         console.log(likeNumber(nnn2));//false
         console.log(likeNumber(nnn3));//true
+
+7.生成多层级列表
+    
+    var dataObj = {
+        name: 'A',
+        children: [{
+            name: 'BB',
+            children: [{
+                name: 'ccc',
+                children: [{
+                    name: 'ffff',
+                    children: []
+                }
+                ]
+            },
+                {
+                    name: 'ddd',
+                    children: [{
+                        name : 'ggggg',
+                        children : []
+                    }]
+                }
+            ]
+        },
+            {
+                name: 'CC',
+                children: [{
+                    name: 'eee',
+                    children: []
+                }
+                ]
+            },
+        ]
+    };
+具体使用参照demo3.html
